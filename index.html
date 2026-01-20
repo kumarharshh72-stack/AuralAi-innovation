@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AuralAI Innovations – Next Level</title>
+
+<style>
+:root{
+  --primary:#007bff;
+  --bg:#f4f6fa;
+  --card:#fff;
+  --text:#222;
+}
+body.dark{
+  --bg:#0e1117;
+  --card:#161b22;
+  --text:#e6edf3;
+}
+
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Segoe UI,Arial;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* ===== PROGRESS BAR ===== */
+#progress{
+  position:fixed;
+  top:0;left:0;
+  height:4px;
+  background:var(--primary);
+  width:0;
+  z-index:9999;
+}
+
+/* ===== HEADER ===== */
+header{
+  padding:20px 50px;
+  display:flex;
+  align-items:center;
+  background:linear-gradient(90deg,#007bff,#0056b3);
+  color:white;
+}
+header img{width:100px;margin-right:20px}
+
+/* ===== NAV ===== */
+nav{
+  position:sticky;
+  top:0;
+  background:#003e85;
+  padding:12px;
+  text-align:center;
+  z-index:999;
+}
+nav a{
+  color:white;
+  margin:0 15px;
+  text-decoration:none;
+  font-weight:500;
+}
+
+/* ===== DARK MODE BTN ===== */
+.toggle{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:var(--primary);
+  color:white;
+  padding:12px 16px;
+  border-radius:50px;
+  cursor:pointer;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+/* ===== HERO ===== */
+.hero{
+  height:520px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:url("https://res.cloudinary.com/dblvl6gym/image/upload/v1768931985/ChatGPT_Image_Jan_20_2026_10_10_34_PM_u6tmfz.png") center/cover no-repeat;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.6);
+}
+.hero-content{
+  position:relative;
+  color:white;
+  text-align:center;
+  max-width:700px;
+  animation:fadeUp 1.2s ease;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.hero h1{font-size:3rem}
+.hero p{font-size:1.1rem}
+.hero a{
+  display:inline-block;
+  margin-top:25px;
+  background:var(--primary);
+  padding:14px 30px;
+  border-radius:30px;
+  color:white;
+  text-decoration:none;
+  transition:.3s;
+}
+.hero a:hover{transform:scale(1.08)}
+
+/* ===== SOUND WAVE ===== */
+canvas{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:120px;
+}
+
+/* ===== SECTIONS ===== */
+section{
+  padding:80px 40px;
+  max-width:1200px;
+  margin:auto;
+}
+h2{text-align:center;margin-bottom:50px}
+
+/* ===== FEATURES ===== */
+.features{
+  display:flex;
+  gap:30px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.card{
+  background:var(--card);
+  width:320px;
+  padding:25px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 15px 35px rgba(0,0,0,.1);
+  transition:.4s;
+}
+.card:hover{
+  transform:translateY(-15px);
+  box-shadow:0 30px 60px rgba(0,123,255,.25);
+}
+.card img{
+  width:100%;
+  max-height:200px;
+  object-fit:contain;
+  margin-bottom:15px;
+}
+
+/* ===== STATS ===== */
+.stats{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+  text-align:center;
+}
+.stat{
+  font-size:2.2rem;
+  font-weight:bold;
+}
+
+/* ===== PRICING ===== */
+.pricing{
+  display:flex;
+  gap:30px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.price{
+  background:var(--card);
+  width:280px;
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 15px 35px rgba(0,0,0,.1);
+}
+.price h3{margin:10px 0}
+.price strong{font-size:2rem}
+
+/* ===== TESTIMONIAL ===== */
+.testimonial{
+  max-width:700px;
+  margin:auto;
+  text-align:center;
+  font-style:italic;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:30px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  header{flex-direction:column;text-align:center}
+  header img{margin-bottom:10px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="progress"></div>
+
+<header>
+<img src="https://res.cloudinary.com/dblvl6gym/image/upload/v1768931227/ChatGPT_Image_Jan_20_2026_10_22_22_PM_nuvgwm.png">
+<div>
+<h1>AuralAI <span style="font-weight:1000">Innovations</span></h1>
+<p>Revolutionizing Audio with AI</p>
+</div>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#features">Features</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section class="hero" id="home">
+<div class="hero-content">
+<h1>Experience Sound Like Never Before</h1>
+<p>AI-powered earbuds with premium sound, smart noise cancellation and futuristic design.</p>
+<a href="#pricing">Get Started</a>
+</div>
+<canvas id="wave"></canvas>
+</section>
+
+<section id="features">
+<h2>Why AuralAI?</h2>
+<div class="features">
+<div class="card">
+<img src="https://res.cloudinary.com/dblvl6gym/image/upload/v1768932689/superior_sound_izei3x.png">
+<h3>Superior Sound</h3>
+<p>Deep bass & crystal clarity.</p>
+</div>
+<div class="card">
+<img src="https://res.cloudinary.com/dblvl6gym/image/upload/v1768932876/ChatGPT_Image_Jan_20_2026_11_38_32_PM_ctcynn.png">
+<h3>Long Battery</h3>
+<p>Up to 30 hours playback.</p>
+</div>
+<div class="card">
+<img src="https://res.cloudinary.com/dblvl6gym/image/upload/v1768932884/ai_k3shmj.png">
+<h3>Smart AI</h3>
+<p>Adapts to your environment.</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Our Impact</h2>
+<div class="stats">
+<div><div class="stat" data-count="5000">0</div>Users</div>
+<div><div class="stat" data-count="120">0</div>Hours Battery</div>
+<div><div class="stat" data-count="98">0</div>% Satisfaction</div>
+</div>
+</section>
+
+<section id="pricing">
+<h2>Pricing</h2>
+<div class="pricing">
+<div class="price">
+<h3>Basic</h3>
+<strong>₹1,999</strong>
+<p>Everyday use</p>
+</div>
+<div class="price">
+<h3>Pro</h3>
+<strong>₹2,999</strong>
+<p>ANC + AI Sound</p>
+</div>
+<div class="price">
+<h3>Ultra</h3>
+<strong>₹3,999</strong>
+<p>All features unlocked</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2>What Users Say</h2>
+<div class="testimonial">
+“AuralAI earbuds changed the way I experience music. Premium feel at student price!”
+</div>
+</section>
+
+<footer id="contact">
+<p>© 2026 AuralAI Innovations • Next-Level Startup Experience</p>
+</footer>
+
+<div class="toggle" onclick="toggleDark()">🌙 Dark Mode</div>
+
+<script>
+/* Progress bar */
+window.addEventListener("scroll",()=>{
+  let h=document.documentElement;
+  let sc=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
+  document.getElementById("progress").style.width=sc+"%";
+});
+
+/* Dark mode */
+function toggleDark(){
+  document.body.classList.toggle("dark");
+}
+
+/* Stats counter */
+document.querySelectorAll(".stat").forEach(el=>{
+  let target=+el.dataset.count;
+  let c=0;
+  let i=setInterval(()=>{
+    c+=Math.ceil(target/80);
+    if(c>=target){c=target;clearInterval(i);}
+    el.innerText=c;
+  },40);
+});
+
+/* Sound wave */
+const canvas=document.getElementById("wave");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=120;
+let t=0;
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.strokeStyle="#00bfff";
+  ctx.beginPath();
+  for(let x=0;x<canvas.width;x++){
+    let y=60+Math.sin((x+t)/20)*20;
+    ctx.lineTo(x,y);
+  }
+  ctx.stroke();
+  t+=2;
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+
+</body>
+</html>  
+bhai ye code me hi fake buy ui banao aur 4 add karo ok yahi code me
